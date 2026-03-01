@@ -19,7 +19,13 @@ app.add_middleware(
 # --- Historical Learner & Predictor Logic (Directly Integrated for Vercel) ---
 class Predictor:
     def __init__(self):
-        self.csv_path = "data.csv"
+        # နေရာစုံမှာ ရှာခိုင်းခြင်း (Vercel အဆင်ပြေအောင်)
+        possible_paths = ["data.csv", "api/data.csv", "../data.csv"]
+        self.csv_path = None
+        for p in possible_paths:
+            if os.path.exists(p):
+                self.csv_path = p
+                break
         
     def execute(self, session, curr_set, curr_val):
         # CSV ဖတ်ခြင်း

@@ -1,0 +1,19 @@
+# AI-2D Master File Paths Configuration
+
+data:
+  raw_csv: "data.csv"
+  processed_dir: "preprocessing/"
+  historical_data: "data_ingestion/set_historical.py"
+
+models:
+  weights_dir: "model_training/weights/"
+  scaler_path: "preprocessing/kronos_scaler.pkl"
+  latest_model: "model_training/weights/kronos_v1.pth"
+
+output:
+  logs_dir: "logs/"
+  visuals_dir: "public/"
+  performance_log: "logs/performance_metrics.json"
+
+external:
+  news_cache: "data_ingestion/news_cache.json"
